@@ -1,5 +1,6 @@
 .idea/
 __pycache__
-config.py
+Scripts/Python/config.py
 saves/
 venv/
+*.db
