@@ -1,6 +1,6 @@
 
 from sqlalchemy import Column, String, Integer, Boolean, MetaData, Table, create_engine
-from sqlalchemy.orm import declarative_base, mapper, Relationship, sessionmaker
+from sqlalchemy.orm import declarative_base, mapper, sessionmaker
 
 metadata = MetaData()
 

@@ -1,121 +1,158 @@
-<GridLayout>
-
-    canvas:
-        Color:
-            rgba: 0.4, 0.6, 0, 1
-        Rectangle:
-            pos: self.pos
-            size: self.size
-
-<Grid>
-
-    canvas:
-        Color:
-            rgba: 1, 1, 1, 1
-        Rectangle:
-            pos: self.pos
-            size: self.size
-
-<Block>
-
-    canvas:
-        Color:
-            rgba: 1, 1, 0, 1
-        Rectangle:
-            pos: self.pos
-            size: self.size
+<Button>:
+    size_hint_y: None
+    height: 40
 
 
-<TextInput>
-    height: 30
+<one_task>:
+    BoxLayout:
+        CheckBox:
+            id: checkbox
+            pos_hint: {"x":0.6, "y":0.4}
+            size_hint: 0.05,0.05
 
-<myButton>:
-    text: '10'
-    on_press: self.change()
-
-<RootWidget>
-    listHah:listHah
-    AnchorLayout:
-
-        anchor_x: 'center'
-        anchor_y: 'center'
-        Grid:
-            size_hint: 1, 1
-
-        GridLayout:
-
-            size_hint: .97, .97
-            rows:1
-
-        AnchorLayout:
-            padding: [dp(10),dp(10),dp(250),dp(440)]
-
-
-            BoxLayout:
-                anchor_x: 'left'
-                anchor_y: 'top'
-
-                padding: [dp(20),dp(10),dp(0),dp(0)]
-                orientation: 'horizontal'
-                BoxLayout:
-                    size: 300, 1200
-                    orientation: 'vertical'
-                    Label:
-                        text: "To-do list"
-                        text_size: self.width-20, self.height-20
-
-                    Label:
-
-                        text: "Пользователя"
-                        text_size: self.width-20, self.height-20
-                    TextInput:
-
-                        size_hint: (.2, None)
-                        height: 30
-                        multiline: False
-
-
-                ScrollView:
-
-                    do_scroll_x: False
-                    do_scroll_y: True
-                    size_hint: 3, None
-                    GridLayout:
-                        size: 500, 1200
-                        id: listHah
-                        cols:1
-                        spacing: 20
-                        size_hint_y: None
-                        Label:
-                            size_hint_y: None
-                            height: self.texture_size[1]
-                            text_size: self.width, None
-                            padding: 10, 10
-                            text: "To-do list"
-                            text_size: self.width-20, self.height-20
-
-
-                        TextInput:
-                            size_hint: (3, None)
-                            height: 30
-                            multiline: False
-
-                        TextInput:
-
-                            size_hint: (1.8, None)
-                            height: 30
-                            multiline: False
-                        TextInput:
-
-                            size_hint: (1.8, None)
-                            height: 30
-                            multiline: False
+<MainPage>:
+    list_of_things: list_of_things
+    BoxLayout:
+        orientation: 'horizontal'
         BoxLayout:
-            padding: [dp(700),dp(10),dp(0),dp(0)]
+            padding:[5, 18, 5, 15]
+            canvas:
+                Color:
+                    rgba: .1, .1, .1, .6
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            orientation: 'vertical'
+            size_hint: 0.33, 1
+
+            Label:
+                text: "To-do list"
+                text_size: self.width-20, self.height-20
+
+            Label:
+                text: "Пользователя"
+                text_size: self.width-20, self.height-20
+
+            TextInput:
+                size_hint: (.8, None)
+                height: 30
+                multiline: False
+
+            Label:
+
+                text: "Холст/записки"
+                text_size: self.width-20, self.height-20
+            TextInput:
+                size_hint: (.2, None)
+                height: 350
+                multiline: False
             Button:
-                text: "add"
-                font_size: "10sp"
-                size: 90, 50
-                padding_x: 80
-                size_hint: None, None
-                on_press: root.change()
+            Button:
+        BoxLayout:
+            orientation: 'vertical'
+            padding:[15,20,15,20]
+            ScrollView:
+                GridLayout:
+                    id: list_of_things
+                    canvas:
+                        Color:
+                            rgba: .1, .1, 1, .3
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    height: self.minimum_height
+                    size_hint_y: None
+                    cols: 1
+                    spacing: 25
+                    padding: 25
+                    Button:
+                        size_hint_y: None
+                        height: 40
+                    Button:
+                        size_hint_y: None
+                        height: 40
+                    Button:
+                        size_hint_y: None
+                        height: 40
+
+
+
+            ScrollView:
+                GridLayout:
+                    canvas:
+                        Color:
+                            rgba: 1, 1, .1, .3
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    height: self.minimum_height
+                    size_hint_y: None
+                    cols: 1
+                    spacing: 25
+                    padding: 25
+                    Button:
+                        size_hint_y: None
+                        height: 40
+                    Button:
+                        size_hint_y: None
+                        height: 40
+                    Button:
+                        size_hint_y: None
+                        height: 40
+
+
+            ScrollView:
+                GridLayout:
+                    canvas:
+                        Color:
+                            rgba: .1, 1, .1, .3
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    height: self.minimum_height
+                    size_hint_y: None
+                    cols: 1
+                    spacing: 25
+                    padding: 25
+                    Button:
+                        size_hint_y: None
+                        height: 40
+                    Button:
+                        size_hint_y: None
+                        height: 40
+                    Button:
+                        size_hint_y: None
+                        height: 40
+
+
+            ScrollView:
+                GridLayout:
+                    canvas:
+                        Color:
+                            rgba: 1, .1, .1, .3
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    height: self.minimum_height
+                    size_hint_y: None
+                    cols: 1
+                    spacing: 25
+                    padding: 25
+                    Button:
+                        size_hint_y: None
+                        height: 40
+                    Button:
+                        size_hint_y: None
+                        height: 40
+                    Button:
+                        size_hint_y: None
+                        height: 40
+    AnchorLayout:
+        anchor_x: 'right'
+        anchor_y: 'bottom'
+        Button:
+            text: "add"
+            font_size: "10sp"
+            size: 90, 50
+            size_hint: None, None
+            on_press: root.change()
